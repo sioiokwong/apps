@@ -2,7 +2,7 @@
 
 **Project Impact**
 
-ZCTAImpacts makes a real-world impact by showing the aggregated environmental effect of local industries in a concise, accessible format.
+[ZCTAImpacts](https://zctaimpacts.abrie.dev) makes a real-world impact by showing the aggregated environmental effect of local industries in a concise, accessible format.
 
 **Innovation**
 
@@ -10,9 +10,7 @@ The app provides a simple search interface. Users are able to search by state, c
 
 **Clarity**
 
-https://github.com/abrie/ZCTAImpacts provides a repository with source code and a script to build the required database from scratch.
-
-<!--Does it present information clearly?-->
+[https://github.com/abrie/ZCTAImpacts](https://github.com/abrie/ZCTAImpacts) provides a repository with source code and a script to build the required database from scratch.
 
 **Implementation**
 
