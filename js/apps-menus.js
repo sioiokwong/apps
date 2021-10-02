@@ -42,15 +42,21 @@ function showImpactWidget(menuType, heroMenu, site) {
 
 function showHeroMenu(menuType, menu, site) {
 
+    if (menuType == "custom") {
+      menu = {"home":[],"composting":[],"biodiesel":[],"connect":[]}
 
-  menu.home.img = "/apps/school/img/hero/ses.jpg"
-  menu.home.page = "/apps/school/"
+      menu.home.img = "/apps/school/img/hero/ses.jpg"
+      menu.home.page = "/apps/school/"
 
-  menu.composting.img = "/apps/school/img/hero/composting.jpg"
-  menu.composting.page = "/apps/composting/"
+      menu.composting.img = "/apps/school/img/hero/composting.jpg"
+      menu.composting.page = "/apps/composting/"
 
-  menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
-  menu.biodiesel.page = "/apps/biodiesel/"
+      menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
+      menu.biodiesel.page = "/apps/biodiesel/"
+
+      menu.connect.img = "/apps/get-involved/ocg-saving-the-ocean_wide.jpg"
+      menu.connect.page = "/apps/get-involved/"
+    }
 
     var menuImages = "";
       $.each(menu, function (key, val) {

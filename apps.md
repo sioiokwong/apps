@@ -9,7 +9,8 @@
 **In the works...**   
 New York - [Impact Profiles](impact)
 Chicago - [Sustainablity at School](school) - [Composting](composting) - [Biodiesel](biodiesel)
-San Diego - [Buildings Energy Benchmarks](/benchmarks)
+San Diego - [Building Energy Benchmarks](/apps/benchmarks)
 Los Angeles - [Get Involved - Connect with your Community](get-involved)
+Hawaii - [A Sustainable Future - Āina (land, that which feeds)](https://www.codeforhawaii.org/apps/base/)
 Atlanta - [Clean Power from Dirty Diapers](cleanpower)
 Colorado - [Parks and Recreation](land)
