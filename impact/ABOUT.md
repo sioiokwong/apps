@@ -6,7 +6,7 @@ ZCTAImpacts makes a real-world impact by showing the aggregated environmental ef
 
 **Innovation**
 
-The app provides a simple search interface. Users are able to search by state, county, or zipcode and get an overview of the area's environmental impact. The overview is presented as a ("Nutrition Label")[https://model.earth/io/template/], indicating its contribution to the ("metabolism of the anthroposphere")[https://en.wikipedia.org/wiki/Anthropogenic_metabolism]
+The app provides a simple search interface. Users are able to search by state, county, or zipcode and get an overview of the area's environmental impact. The overview is presented as a ["Nutrition Label"](https://model.earth/io/template/), indicating its contribution to the ["metabolism of the anthroposphere"](https://en.wikipedia.org/wiki/Anthropogenic_metabolism)
 
 **Clarity**
 
