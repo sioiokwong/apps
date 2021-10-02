@@ -1,24 +1,21 @@
-## About our Sustainable Community Project
+## About ZCTA Impacts
 
 **Project Impact**
 
-Our project makes a real-world impact in addressing the challenge by...
+[ZCTAImpacts](https://zctaimpacts.abrie.dev) makes a real-world impact by showing the aggregated environmental effect of local industries in a concise, accessible format.
 
 **Innovation**
 
-Our community sustainability page is innovative and creative and takes a novel approach by...
+The app provides a simple search interface. Users are able to search by state, county, or zipcode and get an overview of the area's environmental impact. The overview is presented as a ["Nutrition Label"](https://model.earth/io/template/), indicating its contribution to the ["metabolism of the anthroposphere"](https://en.wikipedia.org/wiki/Anthropogenic_metabolism)
 
 **Clarity**
 
-Our project includes the following to make information and tools clear, accessible. and easy to understand...
-
-<!--Does it present information clearly?-->
+[https://github.com/abrie/ZCTAImpacts](https://github.com/abrie/ZCTAImpacts) provides a repository with source code and a script to build the required database from scratch.
 
 **Implementation**
 
-Our community sustainability page provides a new functional solution in the area(s) of...
-
+The app fuses the EPA's USEEIO v2 to US Census Business Patterns through a searchable interface. It uses a React frontend and a Python backend.
 
 **Integration**
 
-New additions created for our project integrate with other work and data in the following ways...
+The app provides a JSON API for querying the aggregated community totals. It's the same API used to generate the nutritional labels. Consumers of the API could use the data to generate a more compelling label, rank a set of communities, or measure local environmental trends over time.
