@@ -1,6 +1,6 @@
 # Confused on how you can make things change? Well here are some options:
 
-<b>Help Build Model Earth: </b> Help is always welcome. To become a tool that serves all, we need the input and help of many curious, environmentally concerned people like you! Get involved and help us make this dream a reality by joining Code for Atlanta
+<b>Find Your Code for America Brigade: </b> Help is always welcome. To help create a tool that serves all, we need the input and help of many curious, environmentally concerned people like you! Get involved and help us make this dream a reality by joining Code for America
 
 <b>Volunteer: </b> Get your hands dirty with local organizations working towards creating a more sustainable future. Take the time to get more physically involved in your community and meet more amazing, helpful people. 
 
