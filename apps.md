@@ -8,8 +8,8 @@
 
 **In the works...**   
 New York - [Impact Profiles](impact)
-Atlanta - [Energy Alternatives](beyondcarbon/) 
 Chicago - [Sustainablity at School](school) - [Composting](composting) - [Biodiesel](biodiesel)
 San Diego - [Buildings Energy Benchmarks](/benchmarks)
 Los Angeles - [Get Involved - Connect with your Community](get-involved)
+Atlanta - [Clean Power from Dirty Diapers](cleanpower)
 Colorado - [Parks and Recreation](land)
