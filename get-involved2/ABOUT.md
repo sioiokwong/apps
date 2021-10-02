@@ -1,4 +1,4 @@
-## About our Sustainable Community Project
+# About our Sustainable Community Project
 
 **Project Impact**
 
