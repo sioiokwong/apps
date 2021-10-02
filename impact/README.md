@@ -1,3 +1,3 @@
 # Community Footprints
 
- ![New York State](zctaimpacts.abrie.dev_.png)
+ [![New York State](zctaimpacts_ny_small.png)](zctaimpacts_ny_full.png)
