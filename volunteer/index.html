@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Help Your Community</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+<link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" id="/localsite/css/base.css" />
+<link type="text/css" rel="stylesheet" href="../css/apps.css" id="/apps/css/apps.css" />
+<script type="text/javascript" src="../../localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
+<script type="text/javascript" src="../../localsite/js/jquery.min.js" id="/localsite/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
+<script type="text/javascript" src="../js/apps-menus.js" id="/apps/js/apps-menus.js"></script>
+<script type="text/javascript" src="../js/apps-impact.js" id="/apps/js/apps-impact.js"></script>
+
+<!-- Set custom app values -->
+<script>
+  if(typeof param=='undefined'){ var param={}; }
+  param.display = "everything"
+  param.lat = 34.0522
+  param.lon = -118.2437
+  param.titleArray = ["Create","Change"]
+  //param.headerLogo = "<img src='/localsite/img/logo/partners/model-earth.png' style='width:240px'>";//
+  param.state = "CA"
+  param.geo = "US90027"
+  param.show = "industries"
+	param.set = "prosperity"
+  param.indicators = "VADD,JOBS"
+
+  // School app menu
+  if(typeof menu=='undefined'){ var menu={}; }
+  menu = {"Build":[],"Volunteer":[],"Donate":[],"Communicate":[]}
+  menu.home.img = "/apps/volunteer/img/hero/ses.jpg"
+  menu.home.page = "/apps/school/"
+
+  menu.Build.img = "/apps/volunteer/img/hero/composting.jpg"
+  menu.Build.page = "/apps/composting/"
+
+  menu.Donate.img = "/apps/volunteer/img/hero/biodiesel.jpg"
+  menu.Donate.page = "/apps/biodiesel/"
+
+  menu.Communicate.img = "/apps/volunteer/img/hero/conference.jpg"
+  menu.Communicate.page = "/apps/volunteer/"
+  menu.conference.title = "Contact Your Reps"
+
+  //showImpactWidget("land", menu, "loyola_chicago")
+
+
+  showHeroMenu("feature", menu, "loyola_chicago")
+</script>
+
+<script type="text/javascript" src="../../localsite/js/localsite.js"></script>
+
+<script>
+loadMarkdown("/apps/volunteer/README.md", "readmeDiv", "_parent");
+loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
+</script>
+
+<!-- Interactive state menu - Display beyond carbon table -->
+<script type="text/javascript" src="../js/bc.js" id="/apps/js/bc.js"></script>
+
+<style>
+  .btn {
+    font-weight: 600;
+  }
+  #hero-landscape-image-local {
+    background-image: url('img/hero/ocg-saving-the-ocean2.jpg');
+  }
+  @media (max-width: 800px) {
+    #hero-landscape-image-local {
+      background-image: url('img/hero/ocg-saving-the-ocean2.jpg');
+    }
+  }   
+</style>
+</head>
+
+
+<body>
+
+<!-- State image refreshed by localsite/js/map-filters.js. Displayed once base.css loads. -->
+<div id="hero_holder">
+<div id="hero-landscape-image-local" class="bgimg" style="z-index:-1; min-height: 550px; background-position: 0 54px; position: absolute; left:0; right:0; opacity: 0.6; background-color:#888;">
+</div>
+
+
+<div class="content contentpadding displayOnload" style="display: none; padding-top:60px; min-height: 550px;">
+  <div class="hero-text">
+
+    <div style="font-size:60px; line-height: 1em; font-weight:800">Help Create a More Sustainable Future </div><br>
+    <div style="font-size:28px; line-height: 1.2em; font-weight:600">
+      Get Involved or Help Those Getting Involved
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+
+<div class="content contentpadding">
+
+  <div style="padding:20px; padding-left:0px">
+    <b>How To Help:</b>
+      <a href="https://www.sunrisemovement.org/find-a-sunrise-hub-near-you/">Build Model Earth</a>
+    | <a href="https://www.surfrider.org/">Volunteer Locally</a>
+    | <a href="conference.html">Donate Locally</a>
+    |  <a href="conference.html">Local Educational Resources</a>
+    |  <a href="conference.html"> Discuss Locally</a>
+  </div>
+
+  Links coming soon...<br>
+  <div id="menuImages" style="display: none;"></div>
+  <div style="clear:both"></div><br>
+
+  <div style="clear:both">
+  </div>
+
+
+    <div id="readmeDiv"></div>
+
+    <div id="dataHeader"></div>
+    <div id="dataDisplay"></div>
+    <br>
+    
+    <div id="aboutDiv"></div>
+
+</div>
+
+</body>
+</html>

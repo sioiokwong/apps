@@ -1,3 +1,3 @@
 # Biodiesel Initiative
 
-asdf
+The biodiesel intiative supplies diesel fuel to Loyola's fleet of intercampus shuttles.

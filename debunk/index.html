@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Community Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+<link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" id="/localsite/css/base.css" />
+<link type="text/css" rel="stylesheet" href="../css/apps.css" id="/apps/css/apps.css" />
+<script type="text/javascript" src="../../localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
+<script type="text/javascript" src="../../localsite/js/jquery.min.js" id="/localsite/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
+<script type="text/javascript" src="../js/apps-menus.js" id="/apps/js/apps-menus.js"></script>
+<script type="text/javascript" src="../js/apps-impact.js" id="/apps/js/apps-impact.js"></script>
+
+<!-- Set custom app values -->
+<script>
+  if(typeof param=='undefined'){ var param={}; }
+  param.display = "navigation"
+  // More params: https://model.earth/localsite
+  
+  showHeroMenu("feature", menu, "my_community_site")
+</script>
+
+<script type="text/javascript" src="../../localsite/js/localsite.js"></script>
+
+<script>
+  loadMarkdown("README.md", "readmeDiv", "_parent");
+  loadMarkdown("item1.md", "item1Div", "_parent");
+  loadMarkdown("item2.md", "item2Div", "_parent");
+  // To add more items:
+  // 1) add item content files item3.md, item4.md, etc.
+  // 2) add corresponding loadMarkdown statements here.
+  // 3) add div elements with IDs item3div, item4div, etc. below
+</script>
+
+<!-- Interactive state menu - Display beyond carbon table -->
+<script type="text/javascript" src="../js/bc.js" id="/apps/js/bc.js"></script>
+
+<style>
+  .bgimg {
+    min-height: 600px;
+  }
+  .btn {
+    font-weight: 600;
+  }
+  #hero-mini {
+    floatX: left;
+  }
+  #hero-rect {
+    overflow: auto;
+    float: none !important;
+  }
+  #hero-landscape-image {
+    background-image: url('img/hero.jpg') !important;
+  }
+</style>
+</head>
+
+
+<body>
+<!--
+State images are refreshed by localsite/js/map-filters.js when state=XX changes in the URL. 
+
+To show a custom hero image, paste the following css above in the style tag.
+This will override the initial state image.
+
+#hero-landscape-image {
+    background-image: url('../school/img/hero/ses.jpg') !important;
+}
+
+Another option is to rename the css snipped above to #hero-landscape-image-local and also rename the hero-landscape-image id below. Then you can remove !important from the snippet.
+
+The hidden hero images are displayed once localsite/css/base.css loads. 
+The .displayOnload divs are displayed when the base.css file loads. This prevents the page from flickering while loading.
+-->
+<div id="hero_holder">
+<div id="hero-landscape-image" class="bgimg displayOnload" style="display:none; background-position: 0 54px;">
+
+  <div class="displayOnload" id="hero-content" style="display: none; min-height: 550px;">
+    
+    <div class="hero-text">
+
+      <div style="font-size:60px; line-height: 1em; font-weight:800">Sustainability Myths and Misconceptions</div><br>
+      <div style="font-size:28px; line-height: 1.2em; font-weight:600">
+        Debunking some common sustainability myths and misconceptions.
+      </div><br>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<div style="clear:both">
+</div>
+
+<div class="content contentpadding">
+
+    <div id="readmeDiv"></div>
+    <div id="item1Div"></div>
+    <div id="item2Div"></div>
+    <!-- To display additional items, add div elements with IDs item3div, item4div, etc. -->
+
+</div>
+
+
+</body>
+</html>
+
+

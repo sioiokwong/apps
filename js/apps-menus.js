@@ -53,7 +53,7 @@ function showHeroMenu(menuType, menu, site) {
   menu.biodiesel.page = "/apps/biodiesel/"
 
     var menuImages = "";
-      $.each(heroMenu, function (key, val) {
+      $.each(menu, function (key, val) {
             //alert(key + val);
             //alert(heroMenu[key].img);
             let pageURL = "";
