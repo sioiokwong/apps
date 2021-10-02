@@ -16,9 +16,7 @@ Our community sustainability page is innovative and creative and takes a novel a
 
 **Clarity**
 
-Our project includes the following to make information and tools clear, accessible, and easy to understand:
-
-  - 
+Our project includes the following to make information and tools clear, accessible, and easy to understand: Widgets and project descriptions.
 
 <!--Does it present information clearly?-->
 
