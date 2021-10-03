@@ -25,8 +25,8 @@
   param.state = "IL"
   param.geo = "US17031"
   param.show = "industries"
-	param.set = "prosperity"
-  param.indicators = "VADD,JOBS"
+	param.set = "air"
+  param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
 
   // School app menu
   if(typeof menu=='undefined'){ var menu={}; }
@@ -36,7 +36,7 @@
   menu.home.page = "./"
 
   menu.airquality.img = "img/project/airquality.jpg"
-  menu.airquality.page = "airquality.html"
+  menu.airquality.page = "loyolachicago/airquality/"
   menu.conference.title = "Air Quality"
 
   menu.biodiesel.img = "img/project/biodiesel.jpg"
@@ -60,8 +60,8 @@
 <script type="text/javascript" src="../../localsite/js/localsite.js"></script>
 
 <script>
-loadMarkdown("README.md", "readmeDiv", "_parent");
-loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
+loadMarkdown("LoyolaAirReadme.md", "readmeDiv", "_parent");
+loadMarkdown("LoyolaAirAbout.md", "aboutDiv", "_parent");
 </script>
 
 <!-- Interactive state menu - Display beyond carbon table -->
@@ -94,7 +94,7 @@ loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 
     <div style="font-size:60px; line-height: 1em; font-weight:800">School-Based Sustainability Initiatives</div><br>
     <div style="font-size:28px; line-height: 1.2em; font-weight:600">
-      Sustainability Initiatives at K-12 Schools, Colleges, and Universities
+      Loyola University Chicago: Air Quality and Pollution Project
     </div>
 
   </div>
@@ -103,6 +103,11 @@ loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 </div>
 
 <div class="content contentpadding">
+
+  <div id='PurpleAirWidget_57441_module_AQI_conversion_C0_average_10_layer_standard'>Loading PurpleAir Widget...</div>
+  <script src='https://www.purpleair.com/pa.widget.js?key=WQDIG1WBX2S88N2Q&module=AQI&conversion=C0&average=10&layer=standard&container=PurpleAirWidget_57441_module_AQI_conversion_C0_average_10_layer_standard'></script>
+
+  <br/>
 
   <div id="menuImages" style="display: none;"></div>
   <div style="clear:both"></div><br>

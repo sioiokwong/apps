@@ -1,3 +1,0 @@
-# Composting Initiative
-
-asdf
