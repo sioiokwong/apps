@@ -74,7 +74,7 @@ function displayStateData(theStateName) {
     if (stateDataset[i][0]==theStateName) {
       
       dataRow += "<table id='resultsTable'>";
-      dataRow += "<tr><td><h2>" + theStateName + " Clean Energy Progress</h2><div style='float:right;font-size:11px'>Source: <a target='_blank' href='https://beyondcarbon.org'>BeyondCarbon.org</a></div></td></tr>"
+      dataRow += "<tr><td><div style='float:right;font-size:11px;padding-top:10px'>Source: <a target='_blank' href='https://beyondcarbon.org'>BeyondCarbon.org</a></div><div style='float:left;font-size:22px;font-weight:500'>" + theStateName + " Clean Energy Progress</div></td></tr>"
       dataRow += "<tr><td>" + statePhrase(stateDataset[i], 5, theStateName) + "</td></tr>"
       dataRow += "<tr><td>Has " + theStateName + " committed to 100% clean energy? " + statePhrase(stateDataset[i], 1, theStateName) + "</td></tr>"
       dataRow += "<tr><td>" + statePhrase(stateDataset[i], 2, theStateName)  + "</td></tr>"
