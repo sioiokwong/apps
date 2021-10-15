@@ -2,9 +2,10 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Community Site</title>
+<title>Clean Power</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
 <link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" id="/localsite/css/base.css" />
 <link type="text/css" rel="stylesheet" href="../css/apps.css" id="/apps/css/apps.css" />
 <script type="text/javascript" src="../../localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
@@ -19,8 +20,8 @@
   param.display = "everything"
   param.lat = 37
   param.lon = -95.7
-  param.state = "IA"
-  param.set = "air"
+  //param.state = "ME"
+  param.set = "energy"
   param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
   // More params: https://model.earth/localsite
 
@@ -58,7 +59,7 @@
 // If edits to your README.md don't appear, clear your cache for prior 24 hours.
 // Don’t clear more than 24hrs or you’ll wipe out your saved passwords and cookie settings.
 loadMarkdown("README.md", "readmeDiv", "_parent");
-loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
+//loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 renderImpactWidget();
 </script>
 
@@ -78,6 +79,9 @@ renderImpactWidget();
   #hero-rect {
     overflow: auto;
     float: none !important;
+  }
+  #hero-landscape-image {
+    background-image: url(/community/img/hero/hero.png);
   }
 </style>
 </head>
@@ -107,21 +111,15 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     
     <div class="hero-text">
 
-      <div style="font-size:60px; line-height: 1em; font-weight:800">Your<br>Community</div><br>
+      <div style="font-size:60px; line-height: 1em; font-weight:800">Clean<br>Power</div><br>
       <div style="font-size:28px; line-height: 1.2em; font-weight:600">
-        Copy base folder and<br>add your local settings
+        From Dirty Diapers!
       </div><br>
 
       <div style="font-size:20px; line-height: 1.2em;">
         <br>
 
         <div style="font-size:18px;">
-
-        <a href="../../community/challenge/" class="btn btn-success" style="text-shadow: none; border:2px solid #ddd">Join the Web Challenge</a><br> 
-
-        <a href="../../community/challenge/how/" class="btn btn-primary" style="text-shadow: none; border:2px solid #ddd">How to Create a Winning Entry</a><br>
-
-        <a href="../../community/projects/" class="btn btn-warning" style="text-shadow: none; border:2px solid #ddd">Project Coding and Design Areas</a><br>
 
         
         </div>
@@ -133,15 +131,30 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
     <div id="hero-rect" style="max-width: 740px; float:left">
       
-      <div style="font-size:22px; margin-top:14px; margin-bottom:18px; font-weight:500">Getting Started...</div>
+      <div style="font-size:22px; margin-top:14px; margin-bottom:18px; font-weight:500">Enter your state or zip code...</div>
 
-      1. Find out where your state and county ranks in combating climate change.<br><br>
-      <div id="relocatedStateMenu"></div><br>
+      <div id="relocatedStateMenu"></div>
 
-      2. Select one of the six main impact areas below. Air, Water, Land, Energy...<br><br>
-      3. Choose one or more commodities in the center column of the input-output chart.<br><br>
-      4. Adjust sliders to view potential impacts to changes in commodity levels.<br><br>
-      5. Copy from the URL and <a href="../../localsite/#parameters">format the parameters</a> in a copy of one of the <a href="../" style="white-space:nowrap">index.html pages</a>.<br><br>
+
+      <div class="content contentpadding" style="margin-bottom:0px; padding-bottom:0px">
+
+        <div id="readmeDiv"></div>
+
+        <div id="greatestNeedsHolder" class="resultsHolder" style="margin-right:30px; ">
+          <div style="margin-bottom:10px;padding-top:0px">
+            
+            <input type="text" id="zip2" class="txtbox frst_location" style="float:left" placeholder="Zip Code" value="30324">
+            <div class="gobutton" style="float:left" onclick="goZip($('#zip2').val())">GO</div>
+            <div style="clear:both"></div>
+            <br>
+            <span id="zip_output" style="margin-left:10px">Enter a zip code to view details.</span>
+          </div>
+        </div>
+
+        
+        <br><br>
+
+      </div>
 
 
       <div id="choose-counties" style="display:none">
@@ -171,7 +184,6 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
 <div class="content contentpadding">
 
-    <div id="readmeDiv"></div>
 
     <div id="dataHeader"></div>
     <div id="dataDisplay"></div>
@@ -185,7 +197,94 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
 </div>
 
-<div id="bodyFile"></div>
+
+
+
+
+<style>
+.txtbox {
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    width: 100%;
+    max-width: 190px;
+    padding: 0 20px;
+    height: 48px;
+    line-height: 60px;
+    font-size: 24px;
+    color: #777;
+    border: solid 1px #b7b7b7;
+    border-radius: 5px;
+    margin-right: 7px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+.gobutton {
+    margin: 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 14px 12px 15px 12px;
+    min-height: 38px;
+    color: #fff;
+    box-sizing: border-box;
+    background: #555;
+    height: 48px;
+    text-decoration: none;
+}
+.resultsHolder {
+    background: rgba(33,33,33,0);
+    padding: 20px 20px 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    margin-bottom: 8px;
+    line-height: 26px;
+}
+td {
+  padding-right: 20px;
+}
+td {
+  border-bottom:1px solid #ccc;
+}
+th {
+  text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+  //loadMarkdown("README.md", "readmeDiv", "_parent");
+
+  $('#zip2').on("keypress", function(e) {
+    if (e.keyCode == 13) { // Enter hit
+      if ($('#zip2').val().length >= 5) {
+        goZip($('#zip2').val().substring(0, 5));
+      }
+    }
+  });
+  function goZip(zip) {
+    if (zip.length == 5) {
+      $('#zip_output').text("");
+      // Load JSON here
+
+      updateHash({"zip":zip});
+      // Load markdown .md file for zip
+      loadMarkdown("https://model.earth/zip/io/data/" + zip.split('').join('/') + "/zipinfo.md", "zip_output", "_parent");
+    } else {
+      $('#zip_output').text('Please enter a 5 digit zip.');
+    }
+  }
+  $(document).ready(function () {
+    if (param.zip) {
+      $('#zip').val(param.zip);
+      goZip($('#zip').val());
+    }
+  });
+</script>
+
+
+
 
 </body>
 </html>

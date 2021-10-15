@@ -1,93 +1,129 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-<meta charset="utf-8">
-<title>Community Site</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <head>
+    <meta charset="utf-8" />
+    <title>Community Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
 
-<link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" id="/localsite/css/base.css" />
-<link type="text/css" rel="stylesheet" href="../css/apps.css" id="/apps/css/apps.css" />
-<script type="text/javascript" src="../../localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
-<script type="text/javascript" src="../../localsite/js/jquery.min.js" id="/localsite/js/jquery.min.js"></script>
-<script type="text/javascript" src="../../localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
-<script type="text/javascript" src="../js/apps-menus.js" id="/apps/js/apps-menus.js"></script>
-<script type="text/javascript" src="../js/apps-impact.js" id="/apps/js/apps-impact.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../localsite/css/base.css"
+      id="/localsite/css/base.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../css/apps.css"
+      id="/apps/css/apps.css"
+    />
+    <script
+      type="text/javascript"
+      src="../../localsite/js/d3.v5.min.js"
+      id="/localsite/js/d3.v5.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../localsite/js/jquery.min.js"
+      id="/localsite/js/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../localsite/js/showdown.min.js"
+      id="/localsite/js/showdown.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../js/apps-menus.js"
+      id="/apps/js/apps-menus.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../js/apps-impact.js"
+      id="/apps/js/apps-impact.js"
+    ></script>
 
-<!-- Set custom app values -->
-<script>
-  if(typeof param=='undefined'){ var param={}; }
-  param.display = "everything"
-  param.lat = 37
-  param.lon = -95.7
-  param.state = "NY"
-  param.set = "air"
-  param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
-  // More params: https://model.earth/localsite
+    <!-- Set custom app values -->
+    <script>
+      if (typeof param == "undefined") {
+        var param = {};
+      }
+      param.display = "everything";
+      param.lat = 37;
+      param.lon = -95.7;
+      param.state = "NY";
+      param.set = "air";
+      param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS";
+      // More params: https://model.earth/localsite
 
+      // Shared Sections menu
+      if (typeof menu == "undefined") {
+        var menu = {};
+      }
+      // IMPORTANT: The names on this line must include the param's below it.
+      menu = { home: [], composting: [], biodiesel: [] };
 
-  // Shared Sections menu
-  if(typeof menu=='undefined'){ var menu={}; }
-  // IMPORTANT: The names on this line must include the param's below it.
-  menu = {"home":[],"composting":[],"biodiesel":[]}
+      menu.home.img = "/apps/school/img/hero/ses.jpg";
+      menu.home.page = "/apps/school/";
 
-  menu.home.img = "/apps/school/img/hero/ses.jpg"
-  menu.home.page = "/apps/school/"
+      menu.composting.img = "/apps/school/img/hero/composting.jpg";
+      menu.composting.page = "/apps/composting/";
 
-  menu.composting.img = "/apps/school/img/hero/composting.jpg"
-  menu.composting.page = "/apps/composting/"
+      menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg";
+      menu.biodiesel.page = "/apps/biodiesel/";
 
-  menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
-  menu.biodiesel.page = "/apps/biodiesel/"
+      showHeroMenu("custom", menu, "my_community_site");
 
-  showHeroMenu("custom", menu, "my_community_site")
+      $(document).ready(function () {
+        showImpactWidget("land", menu, "my_community_site"); // This waits for the DOM to load
+        // Some of your javascript will need to reside in this Ready statement
+        // This allows the HTML to load before manipulating ID elements on the page below.
+        // Example, hide the verticle menu widget:
+        //$("#hero-mini").hide();
+      });
+    </script>
 
-  $(document).ready(function() {
-    showImpactWidget("land", menu, "my_community_site") // This waits for the DOM to load
-    // Some of your javascript will need to reside in this Ready statement 
-    // This allows the HTML to load before manipulating ID elements on the page below.
-    // Example, hide the verticle menu widget:
-    //$("#hero-mini").hide();
-  });
-  
-</script>
+    <script
+      type="text/javascript"
+      src="../../localsite/js/localsite.js"
+    ></script>
 
-<script type="text/javascript" src="../../localsite/js/localsite.js"></script>
+    <script>
+      // If edits to your README.md don't appear, clear your cache for prior 24 hours.
+      // Don’t clear more than 24hrs or you’ll wipe out your saved passwords and cookie settings.
+      loadMarkdown("README.md", "readmeDiv", "_parent");
+      loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 
+      renderImpactWidget();
+    </script>
 
-<script>
-// If edits to your README.md don't appear, clear your cache for prior 24 hours.
-// Don’t clear more than 24hrs or you’ll wipe out your saved passwords and cookie settings.
-loadMarkdown("README.md", "readmeDiv", "_parent");
-loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
+    <!-- Interactive state menu - Display beyond carbon table -->
+    <script
+      type="text/javascript"
+      src="../js/bc.js"
+      id="/apps/js/bc.js"
+    ></script>
 
+    <style>
+      .bgimg {
+        min-height: 600px;
+      }
+      .btn {
+        font-weight: 600;
+      }
+      #hero-mini {
+        floatx: left;
+      }
+      #hero-rect {
+        overflow: auto;
+        float: none !important;
+      }
+    </style>
+  </head>
 
-renderImpactWidget();
-</script>
-
-<!-- Interactive state menu - Display beyond carbon table -->
-<script type="text/javascript" src="../js/bc.js" id="/apps/js/bc.js"></script>
-
-<style>
-  .bgimg {
-    min-height: 600px;
-  }
-  .btn {
-    font-weight: 600;
-  }
-  #hero-mini {
-    floatX: left;
-  }
-  #hero-rect {
-    overflow: auto;
-    float: none !important;
-  }
-</style>
-</head>
-
-
-<body>
-<!--
+  <body>
+    <!--
 State images are refreshed by localsite/js/map-filters.js when state=XX changes in the URL. 
 
 To show a custom hero image, paste the following css above in the style tag.
@@ -102,83 +138,93 @@ Another option is to rename the css snipped above to #hero-landscape-image-local
 The hidden hero images are displayed once localsite/css/base.css loads. 
 The .displayOnload divs are displayed when the base.css file loads. This prevents the page from flickering while loading.
 -->
-<div id="hero_holder">
-<div id="hero-landscape-image" class="bgimg displayOnload" style="display:none; background-position: 0 54px;">
+    <div id="hero_holder">
+      <div
+        id="hero-landscape-image"
+        class="bgimg displayOnload"
+        style="display: none; background-position: 0 54px"
+      >
+        <div
+          class="displayOnload"
+          id="hero-content"
+          style="display: none; min-height: 550px"
+        >
+          <div class="hero-text">
+            <div style="font-size: 60px; line-height: 1em; font-weight: 800">
+              Impact<br />Profiles
+            </div>
+            <br />
+            <div style="font-size: 28px; line-height: 1.2em; font-weight: 600">
+              Generate Environmental Footprints
+            </div>
+            <br />
 
-  <div class="displayOnload" id="hero-content" style="display: none; min-height: 550px;">
-    
-    
-    <div class="hero-text">
+            <div style="font-size: 20px; line-height: 1.2em">
+              <br />
 
-      <div style="font-size:60px; line-height: 1em; font-weight:800">Impact<br>Profiles</div><br>
-      <div style="font-size:28px; line-height: 1.2em; font-weight:600">
-        Generate Environmental Footprints
-      </div><br>
+              <div style="font-size: 18px"></div>
 
-      <div style="font-size:20px; line-height: 1.2em;">
-        <br>
+              <br />
+            </div>
+          </div>
 
-        <div style="font-size:18px;">
+          <div id="hero-rect" style="max-width: 740px; float: left">
+            <div
+              style="
+                font-size: 22px;
+                margin-top: 14px;
+                margin-bottom: 18px;
+                font-weight: 500;
+              "
+            >
+              Choose your state...
+            </div>
 
+            <div id="relocatedStateMenu"></div>
+            <br />
 
+            <div id="choose-counties" style="display: none">
+              <a
+                href="#mapview=counties"
+                onclick="$('#filterClickLocation').click();return false;"
+                >Select one or more counties</a
+              ><br />
+            </div>
+          </div>
+
+          <div
+            id="hero-mini"
+            style="float: left; width: 100%; max-width: 740px"
+          >
+            Enter your city, state or zip...<br />
+            <div id="impact-widget-horizontal"></div>
+
+            <div id="insertImpactIcons"></div>
+            <div style="clear: both"></div>
+            <br />
+          </div>
         </div>
-
-        <br>
       </div>
     </div>
 
+    <div style="clear: both"></div>
 
-    <div id="hero-rect" style="max-width: 740px; float:left">
-      
-      <div style="font-size:22px; margin-top:14px; margin-bottom:18px; font-weight:500">Choose your state...</div>
+    <div class="content contentpadding">
+      <div id="readmeDiv"></div>
 
-      <div id="relocatedStateMenu"></div><br>
+      <div id="dataHeader"></div>
+      <div id="dataDisplay"></div>
+      <br />
 
+      <h2>Shared Sections</h2>
+      <div id="menuImages" style="display: none"></div>
+      <div style="clear: both"></div>
+      <br />
 
-      <div id="choose-counties" style="display:none">
-        <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">Select one or more counties</a><br>
-      </div>
-
+      <div id="aboutDiv"></div>
     </div>
 
-    <div id="hero-mini" style="float:left; width:100%; max-width: 740px;">
-      
-      Enter your city, state or zip...<br><br>
-      <div id="impact-widget-horizontal"></div>
-
-      <div id="insertImpactIcons"></div>
-      <div style="clear:both"></div><br>
-
-    </div>
-
-
-
-  </div>
-
-</div>
-</div>
-
-<div style="clear:both">
-</div>
-
-<div class="content contentpadding">
-
-    <div id="readmeDiv"></div>
-
-    <div id="dataHeader"></div>
-    <div id="dataDisplay"></div>
-    <br>
-
-    <h2>Shared Sections</h2>
-    <div id="menuImages" style="display: none;"></div>
-    <div style="clear:both"></div><br>
-
-    <div id="aboutDiv"></div>
-
-</div>
-
-
-</body>
+    <div id="bodyFile"></div>
+    
+  </body>
 </html>
-
-

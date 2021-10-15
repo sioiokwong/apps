@@ -1,4 +1,5 @@
-# My Community Page
+# Community Footprints
 
-Copy the base folder and edit the README.md file to add info to your page.  
-Edit the param values in your page header to customize your default location, industries and impacts.
+See [https://zctaimpacts.abrie.dev](https://zctaimpacts.abrie.dev) for a live demonstration.
+
+[![New York State](zctaimpacts_ny_small.png)](zctaimpacts_ny_full.png)
