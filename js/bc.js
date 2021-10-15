@@ -6,23 +6,25 @@
 if(typeof param == 'undefined') {
   var param = {};
 }
-var stateData = {};
+var stateImpact = {};
 $(document).ready(function() {
 
   // `hashChangeEvent` event reside in multiple widgets. Also called by involking goHash() within localsite.js
   document.addEventListener('hashChangeEvent', function (elem) {
-      //let hash = getHash();
+      let hash = getHash();
 
-      //let theState = $("#state_select").find(":selected").val();
-      let theStateName = $("#state_select").find(":selected").text();
-      //let theStateNameLowercase = theStateName.toLowerCase();
+      if (hash.state) {
+        //let theStateName = $("#state_select").find(":selected").text();
+        let theStateName = getState(hash.state.split(",")[0].toUpperCase());
 
-      console.log("theStateName from hashChangeEvent: " + theStateName);
-      displayStateData(theStateName,stateData);
-      
+        console.log("theStateName from hashChangeEvent: " + theStateName);
+        displaystateImpact(theStateName,stateImpact);
+      } else {
+        $("#dataDisplay").hide();
+      }
   }, false);
 
-  //stateData = 
+  //stateImpact = 
   loadHtmlTable(true); // New list
 });
 
@@ -32,9 +34,9 @@ function loadHtmlTable(applyFilter) {
   /*
   // Prior used csv file
   d3.text("/apps/beyondcarbon/5_22-data-06_06.csv").then(function(data) {
-      stateData = d3.csvParseRows(data);
-      console.log("loadHtmlTable - stateData row count: " + stateData.length);
-      //alert(stateData);
+      stateImpact = d3.csvParseRows(data);
+      console.log("loadHtmlTable - stateImpact row count: " + stateImpact.length);
+      //alert(stateImpact);
 
         let theStateName = "";
         if (param.state) {
@@ -45,7 +47,7 @@ function loadHtmlTable(applyFilter) {
             if(!theStateName) { // Hack. We need to instead trigger when #state_select menu becomes available.
               theStateName = "No State Found"
             }
-            displayStateData(theStateName);
+            displaystateImpact(theStateName);
           }, 1000 ); // Allow time for state dropdown to load.
         }
   });
@@ -62,13 +64,13 @@ function loadHtmlTable(applyFilter) {
     var fullHtml = "";
 
     d3.json(url).then(function(json,error) {
-      stateData = $.extend(true, {}, json); // Clone/copy object without entanglement
+      stateImpact = $.extend(true, {}, json); // Clone/copy object without entanglement
       if (param.state) {
         //theStateName = $("#state_select").find(":selected").text();
         let theStateName = getState(param.state);
 
           $(document).ready(function () {
-            displayStateData(theStateName, stateData);
+            displaystateImpact(theStateName, stateImpact);
           });
 
       }
@@ -91,8 +93,8 @@ function loadHtmlTable(applyFilter) {
       */
 
       if (error) throw error;
-      //console.log("stateData");
-      //return(stateData);
+      //console.log("stateImpact");
+      //return(stateImpact);
       
   });
 
@@ -106,7 +108,7 @@ function stateInsert(stateText, theStateName) {
   return(stateText.replace("[XX]" || "[XX's]", theStateName) )
 }
 
-function displayStateData(theStateName,stateData) {
+function displaystateImpact(theStateName,stateImpact) {
   
   if (theStateName.length < 0) {
     alert("theStateName: " + theStateName);
@@ -134,64 +136,64 @@ function displayStateData(theStateName,stateData) {
   let rowcount = 0;
   let dataRow = "";
 
-  console.log("stateData");
-  console.log(stateData);
+  console.log("stateImpact");
+  console.log(stateImpact);
 
-  //alert("stateData.length " + stateData.length);
-  //alert(stateData[theStateName].clean_energy_commitment);
+  //alert("stateImpact.length " + stateImpact.length);
+  //alert(stateImpact[theStateName].clean_energy_commitment);
 
   dataRow += "<div style='float:right; margin-left:15px;border-left:1px solid #ccc; padding-left:10px'>"
-    dataRow += "CO<sub>2</sub> per capita: " + stateData[theStateName].CO2_per_capita + "<br>";
-    dataRow += "CO<sub>2</sub> per 1000 miles: " + stateData[theStateName].CO2_per_1000_miles + "<br>";
+    dataRow += "CO<sub>2</sub> per capita: " + stateImpact[theStateName].CO2_per_capita + "<br>";
+    dataRow += "CO<sub>2</sub> per 1000 miles: " + stateImpact[theStateName].CO2_per_1000_miles + "<br>";
   
-    dataRow += "CO<sub>2</sub> Emissions: " + stateData[theStateName].CO2_emissions + "<br>";
-    dataRow += "CO<sub>2</sub> Percent: " + stateData[theStateName].CO2_percent + "%<br>";
-    dataRow += "Population: " + stateData[theStateName].population.toLocaleString() + "<br>";
-    dataRow += "Population percent: " + stateData[theStateName].population_percent + "%<br>";
+    dataRow += "CO<sub>2</sub> Emissions: " + stateImpact[theStateName].CO2_emissions + "<br>";
+    dataRow += "CO<sub>2</sub> Percent: " + stateImpact[theStateName].CO2_percent + "%<br>";
+    dataRow += "Population: " + stateImpact[theStateName].population.toLocaleString() + "<br>";
+    dataRow += "Population percent: " + stateImpact[theStateName].population_percent + "%<br>";
   dataRow += "</div>"
 
   dataRow += "<div>"
-    dataRow += stateInsert(stateData[theStateName].energy_efficency_rank,theStateName) + "<br>";
+    dataRow += stateInsert(stateImpact[theStateName].energy_efficency_rank,theStateName) + "<br>";
     
-    if (stateData[theStateName].clean_energy_commitment == "No") {
+    if (stateImpact[theStateName].clean_energy_commitment == "No") {
       dataRow += theStateName + " has not committed to 100% clean energy.<br>";
-    } else if (stateData[theStateName].clean_energy_commitment == "Yes") {
+    } else if (stateImpact[theStateName].clean_energy_commitment == "Yes") {
       dataRow += theStateName + " has committed to 100% clean energy!<br>";
     } else {
-      //dataRow += stateInsert(stateData[theStateName].clean_energy_commitment,theStateName) + "<br>";
+      //dataRow += stateInsert(stateImpact[theStateName].clean_energy_commitment,theStateName) + "<br>";
     }
-    dataRow += stateInsert(stateData[theStateName].clean_energy_target_percent,theStateName) + "<br>";
+    dataRow += stateInsert(stateImpact[theStateName].clean_energy_target_percent,theStateName) + "<br>";
     
-    if (stateData[theStateName].carbon_pollution_reduction_goal_percent == "No") {
+    if (stateImpact[theStateName].carbon_pollution_reduction_goal_percent == "No") {
         dataRow += theStateName + " has no goal for reducing carbon pollution across the entire economy.<br>"
     } else {
-      dataRow += stateInsert(stateData[theStateName].carbon_pollution_reduction_goal_percent,theStateName) + "<br>";
+      dataRow += stateInsert(stateImpact[theStateName].carbon_pollution_reduction_goal_percent,theStateName) + "<br>";
     }
-    if (stateData[theStateName].electric_vehicle_goals == "No") {
+    if (stateImpact[theStateName].electric_vehicle_goals == "No") {
       dataRow += theStateName + " has no goals or incentives for electric vehicles.<br>"
     } else {
-      dataRow += stateInsert(stateData[theStateName].electric_vehicle_goals,theStateName) + "<br>";
+      dataRow += stateInsert(stateImpact[theStateName].electric_vehicle_goals,theStateName) + "<br>";
     }
-    //dataRow += "CO<sub>2</sub> Rank: #" + stateData[theStateName].CO2_rank + " by the American Council for an Energy-Efficient Economy<br>";
-  dataRow += "</div>"
+    //dataRow += "CO<sub>2</sub> Rank: #" + stateImpact[theStateName].CO2_rank + " by the American Council for an Energy-Efficient Economy<br>";
+  dataRow += "</div><br>"
 
-
-  dataRow += "<br>"
-
-  for(var i = 0; i < stateData.length; i++) {
+  /*
+  // DELETE - CSV version
+  for(var i = 0; i < stateImpact.length; i++) {
     rowcount++;
-    if (stateData[i][0]==theStateName) {
+    if (stateImpact[i][0]==theStateName) {
       
       dataRow += "<table id='resultsTable'>";
       dataRow += "<tr><td><div style='float:right;font-size:11px;padding-top:10px'>Source: <a target='_blank' href='https://beyondcarbon.org'>BeyondCarbon.org</a></div><div style='float:left;font-size:22px;font-weight:500'>" + theStateName + " Clean Energy Progress</div></td></tr>"
-      dataRow += "<tr><td>" + statePhrase(stateData[i], 5, theStateName) + "</td></tr>"
-      dataRow += "<tr><td>Has " + theStateName + " committed to 100% clean energy? " + statePhrase(stateData[i], 1, theStateName) + "</td></tr>"
-      dataRow += "<tr><td>" + statePhrase(stateData[i], 2, theStateName)  + "</td></tr>"
-      dataRow += "<tr><td>Does " + theStateName + " have a goal for reducing carbon pollution across the entire economy? " + statePhrase(stateData[i], 3, theStateName)  + "</td></tr>"
-      dataRow += "<tr><td>Does " + theStateName + " have goals or incentives for electric vehicles? " + statePhrase(stateData[i], 4, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>" + statePhrase(stateImpact[i], 5, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>Has " + theStateName + " committed to 100% clean energy? " + statePhrase(stateImpact[i], 1, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>" + statePhrase(stateImpact[i], 2, theStateName)  + "</td></tr>"
+      dataRow += "<tr><td>Does " + theStateName + " have a goal for reducing carbon pollution across the entire economy? " + statePhrase(stateImpact[i], 3, theStateName)  + "</td></tr>"
+      dataRow += "<tr><td>Does " + theStateName + " have goals or incentives for electric vehicles? " + statePhrase(stateImpact[i], 4, theStateName) + "</td></tr>"
       dataRow += "</table>";
     }
   }
+  */
   //alert("rowcount " + rowcount);
   //$(dataRow).insertAfter($("#dataHeader"));
 
@@ -200,8 +202,8 @@ function displayStateData(theStateName,stateData) {
 }
 
 
-function displayStateDataXXX(theStateName) {
-  alert("displayStateData: " + theStateName);
+function displaystateImpactXXX(theStateName) {
+  alert("displaystateImpact: " + theStateName);
   if (theStateName.length <= 0) {
     //alert("test")
     $("#about-profile").show();
@@ -219,17 +221,17 @@ function displayStateDataXXX(theStateName) {
   let rowcount = 0;
   let dataRow = "";
   
-  for(var i = 0; i < stateData.length; i++) {
+  for(var i = 0; i < stateImpact.length; i++) {
     rowcount++;
-    if (stateData[i][0]==theStateName) {
+    if (stateImpact[i][0]==theStateName) {
       
       dataRow += "<table id='resultsTable'>";
       dataRow += "<tr><td><div style='float:right;font-size:11px;padding-top:10px'>Source: <a target='_blank' href='https://beyondcarbon.org'>BeyondCarbon.org</a></div><div style='float:left;font-size:22px;font-weight:500'>" + theStateName + " Clean Energy Progress</div></td></tr>"
-      dataRow += "<tr><td>" + statePhrase(stateData[i], 5, theStateName) + "</td></tr>"
-      dataRow += "<tr><td>Has " + theStateName + " committed to 100% clean energy? " + statePhrase(stateData[i], 1, theStateName) + "</td></tr>"
-      dataRow += "<tr><td>" + statePhrase(stateData[i], 2, theStateName)  + "</td></tr>"
-      dataRow += "<tr><td>Does " + theStateName + " have a goal for reducing carbon pollution across the entire economy? " + statePhrase(stateData[i], 3, theStateName)  + "</td></tr>"
-      dataRow += "<tr><td>Does " + theStateName + " have goals or incentives for electric vehicles? " + statePhrase(stateData[i], 4, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>" + statePhrase(stateImpact[i], 5, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>Has " + theStateName + " committed to 100% clean energy? " + statePhrase(stateImpact[i], 1, theStateName) + "</td></tr>"
+      dataRow += "<tr><td>" + statePhrase(stateImpact[i], 2, theStateName)  + "</td></tr>"
+      dataRow += "<tr><td>Does " + theStateName + " have a goal for reducing carbon pollution across the entire economy? " + statePhrase(stateImpact[i], 3, theStateName)  + "</td></tr>"
+      dataRow += "<tr><td>Does " + theStateName + " have goals or incentives for electric vehicles? " + statePhrase(stateImpact[i], 4, theStateName) + "</td></tr>"
       dataRow += "</table>";
     }
   }
