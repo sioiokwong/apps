@@ -155,8 +155,8 @@ function displaystateImpact(theStateName,stateImpact) {
   //alert(stateImpact[theStateName].clean_energy_commitment);
 
   dataRow += "<div style='float:right; margin-left:15px;border-left:1px solid #ccc; padding-left:10px'>"
-    dataRow += "CO<sub>2</sub> per capita: " + stateImpact[theStateName].CO2_per_capita + "<br>";
-    dataRow += "CO<sub>2</sub> per 1000 miles: " + stateImpact[theStateName].CO2_per_1000_miles + "<br>";
+    dataRow += "CO<sub>2</sub> per capita: " + stateImpact[theStateName].CO2_per_capita + " (tons)<br>";
+    dataRow += "CO<sub>2</sub> per 1000 miles: " + stateImpact[theStateName].CO2_per_1000_miles + " (tons)<br>";
   
     dataRow += "CO<sub>2</sub> Emissions: " + stateImpact[theStateName].CO2_emissions + "<br>";
     dataRow += "CO<sub>2</sub> Percent: " + stateImpact[theStateName].CO2_percent + "%<br>";
