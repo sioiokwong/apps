@@ -27,12 +27,12 @@ function showImpactWidget(menuType, heroMenu, site) {
     var i = 0;
 
     html[i++] = "<div class='impactIcons'>";
-    html[i++] = "<div class='impactIcon_Air' onclick=\"goHash({'set':'air','indicators':'GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS'});\">Air</div>";
-    html[i++] = "<div class='impactIcon_Water' onclick=\"goHash({'set':'water','indicators':'WATR,ACID,EUTR,ETOX'});\">Water</div>";
-    html[i++] = "<div class='impactIcon_Health' onclick=\"goHash({'set':'health','indicators':'HTOX,HCAN,HNCN,HTOX,HRSP'});\">Health</div>";
-    html[i++] = "<div class='impactIcon_Land' onclick=\"goHash({'set':'land','indicators':'LAND,MNRL,PEST,METL,CRHW,CMSW,FMSW,CCDD'});\">Land</div>";
-    html[i++] = "<div class='impactIcon_Energy' onclick=\"goHash({'set':'energy','indicators':'ENRG,NNRG,RNRG'});\">Energy</div>";
-    html[i++] = "<div class='impactIcon_Prosperity' onclick=\"goHash({'set':'prosperity','indicators':'VADD,JOBS'});\">Prosperity</div>";
+    html[i++] = "<div class='impactIcon_Air' onclick=\"goHash({'set':'air','indicators':'GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS'});\">Air <span class='material-icons' style='float:right'>air</span></div>";
+    html[i++] = "<div class='impactIcon_Water' onclick=\"goHash({'set':'water','indicators':'WATR,ACID,EUTR,ETOX'});\">Water <span class='material-icons' style='float:right'>water_drop</span></div>";
+    html[i++] = "<div class='impactIcon_Health' onclick=\"goHash({'set':'health','indicators':'HTOX,HCAN,HNCN,HTOX,HRSP'});\">Health <span class='material-icons' style='float:right'>local_pharmacy</span></div>";
+    html[i++] = "<div class='impactIcon_Land' onclick=\"goHash({'set':'land','indicators':'LAND,MNRL,PEST,METL,CRHW,CMSW,FMSW,CCDD'});\">Land <span class='material-icons' style='float:right'>forest</span></div>";
+    html[i++] = "<div class='impactIcon_Energy' onclick=\"goHash({'set':'energy','indicators':'ENRG,NNRG,RNRG'});\">Energy <span class='material-icons' style='float:right'>lightbulb</span></div>";
+    html[i++] = "<div class='impactIcon_Prosperity' onclick=\"goHash({'set':'prosperity','indicators':'VADD,JOBS'});\">Prosperity <span class='material-icons' style='float:right'>sentiment_satisfied_alt</span></div>";
     html[i++] = "</div>";
 
     $(document).ready(function() {
