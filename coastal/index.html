@@ -26,14 +26,11 @@ param.indicators="ENRG,JOBS,VADD,WATR"
 param.state="GA"
 param.display="everything"; // Causes redirect to localsite/info without any parameters.
 param.regiontitle="Southeast Coastal"
-
 window.document.title = "Coastal Communities"
 loadMarkdown("coastal.md", "readmeDiv", "_parent");
 
 $(document).ready(function () {
-
 		$(".sea").show();
-	
 });
 // OPTIONAL - You can override the default bioeconomy naics files
 // param.indicators = "113000,321113,113310,32121,32191,562213,322121,322110,541620,325211,325991,3256,335991,325120,326190,";
