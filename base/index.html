@@ -75,6 +75,10 @@ renderImpactWidget();
     overflow: auto;
     float: none !important;
   }
+  /* TO DO: Only set this css when state param is null, otherwise two hero images are loaded. */
+  .bgimg {
+    background-image: url(https://model.earth/us-states/images/backgrounds/1280x720/landscape/south-dakota.jpg);
+  }
 </style>
 </head>
 
@@ -111,12 +115,12 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
         </div><br>
         -->
 
-        <div id="hero-mini" style="float:left; margin-right: 30px;">
+        <div id="hero-mini" style="float:left; margin-right:30px; padding-top:4px">
         
           <div id="impact-widget-vertical"></div>
 
           <div id="insertImpactIcons"></div>
-          <div style="clear:both"></div><br>
+          <div style="clear:both"></div>
 
         </div>
 
@@ -157,7 +161,7 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
           4. Adjust sliders to view the effects of changes in commodity levels.<br><br>
          
           To create your own page, copy your URL parameters and <a href="../../localsite/#parameters">format as javascript</a><br>
-          in a copy of an existing <a href="../" style="white-space:nowrap">index.html</a> page.<br><br>
+          in a copy of an existing <a href="../" style="white-space:nowrap">index.html</a> community page.<br><br>
 
 
           
