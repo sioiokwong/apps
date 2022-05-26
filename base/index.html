@@ -19,7 +19,7 @@
   param.display = "everything"
   param.lat = 37
   param.lon = -95.7
-  param.state = "IA"
+  //param.state = "GA"
   param.set = "air"
   param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
   // More params: https://model.earth/localsite
@@ -100,62 +100,73 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
   <div class="displayOnload" id="hero-content" style="display: none; min-height: 550px;">
     
-    
     <div class="hero-text">
 
-      <div style="font-size:60px; line-height: 1em; font-weight:800">Your<br>Community</div><br>
-      <div style="font-size:28px; line-height: 1.2em; font-weight:600">
-        Copy base folder and<br>add your local settings
-      </div><br>
+      <div style="font-size:55px; line-height: 1em; font-weight:800">Local Impacts<br></div><br>
 
-      <div style="font-size:20px; line-height: 1.2em;">
-        <br>
+      <div>
+        <!--
+        <div style="font-size:28px; line-height: 1.2em; font-weight:600">
+          Copy base folder and<br>add your local settings
+        </div><br>
+        -->
 
-        <div style="font-size:18px;">
-
-        <a href="../../community/challenge/" class="btn btn-success" style="text-shadow: none; border:2px solid #ddd">Join the Web Challenge</a><br> 
-
-        <a href="../../community/challenge/how/" class="btn btn-primary" style="text-shadow: none; border:2px solid #ddd">How to Create a Winning Entry</a><br>
-
-        <a href="../../community/projects/" class="btn btn-warning" style="text-shadow: none; border:2px solid #ddd">Project Coding and Design Areas</a><br>
-
+        <div id="hero-mini" style="float:left; margin-right: 30px;">
         
+          <div id="impact-widget-vertical"></div>
+
+          <div id="insertImpactIcons"></div>
+          <div style="clear:both"></div><br>
+
         </div>
 
-        <br>
-      </div>
-    </div>
+        <!--
+        <div style="font-size:20px; line-height: 1.2em;">
+          <br>
 
+          <div style="font-size:18px;">
 
-    <div id="hero-rect" style="max-width: 740px; float:left">
+          <a href="../../community/challenge/" class="btn btn-success" style="text-shadow: none; border:2px solid #ddd">Join the Web Challenge</a><br> 
+
+          <a href="../../community/challenge/how/" class="btn btn-primary" style="text-shadow: none; border:2px solid #ddd">How to Create a Winning Entry</a><br>
+
+          <a href="../../community/projects/" class="btn btn-warning" style="text-shadow: none; border:2px solid #ddd">Project Coding and Design Areas</a><br>
+
+          
+          </div>
+
+          <br>
+        </div>
+        -->
+
       
-      <div style="font-size:22px; margin-top:14px; margin-bottom:18px; font-weight:500">Getting Started...</div>
-
-      1. Find out where your state and county ranks in combating climate change.<br><br>
-      <div id="relocatedStateMenu"></div><br>
-
-      2. Select one of the six main impact areas below. Air, Water, Land, Energy...<br><br>
-      3. Choose one or more commodities in the center column of the input-output chart.<br><br>
-      4. Adjust sliders to view potential impacts to changes in commodity levels.<br><br>
-      5. Copy from the URL and <a href="../../localsite/#parameters">format the parameters</a> in a copy of one of the <a href="../" style="white-space:nowrap">index.html pages</a>.<br><br>
 
 
-      <div id="choose-counties" style="display:none">
-        <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">Select one or more counties</a><br>
+        <div id="hero-rect" style="overflow: auto; max-width: 740px; float:left">
+          
+          <div style="font-size:24px; margin-top:14px; margin-bottom:18px; font-weight:500">Explore your community's industries and impacts<!--Getting Started-->...</div>
+
+          1. Select your state and one or more counties<!-- in combating climate change-->.<br><br>
+          <div id="relocatedStateMenu" style="float:left"></div>
+          <div id="choose-counties" style="display:none">
+            &nbsp; <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;" class="btn btn-success">Select counties</a><br>
+          </div>
+          <div style="clear:both"></div><br>
+          2. Select a focus area: Air, Water, Land, Energy, Health, Prosperity<br><br>
+          3. Choose commodities in the center column of the Input-Output chart.<br><br>
+          4. Adjust sliders to view the effects of changes in commodity levels.<br><br>
+         
+          To create your own page, copy your URL parameters and <a href="../../localsite/#parameters">format as javascript</a><br>
+          in a copy of an existing <a href="../" style="white-space:nowrap">index.html</a> page.<br><br>
+
+
+          
+
+        </div>
+
       </div>
 
     </div>
-
-    <div id="hero-mini" style="float:left; width:100%;">
-      
-      <div id="impact-widget-horizontal"></div>
-
-      <div id="insertImpactIcons"></div>
-      <div style="clear:both"></div><br>
-
-    </div>
-
-
 
   </div>
 

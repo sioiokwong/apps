@@ -1,4 +1,4 @@
-## About our Sustainable Community Project
+## About our Community Project
 
 ## Loyola Biodiesel Program 
 
