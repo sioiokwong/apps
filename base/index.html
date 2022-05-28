@@ -10,6 +10,7 @@
 <script type="text/javascript" src="../../localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
 <script type="text/javascript" src="../../localsite/js/jquery.min.js" id="/localsite/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
+
 <script type="text/javascript" src="../js/apps-menus.js" id="/apps/js/apps-menus.js"></script>
 <script type="text/javascript" src="../js/apps-impact.js" id="/apps/js/apps-impact.js"></script>
 
@@ -26,8 +27,8 @@
 
   // Shared Sections menu
   if(typeof menu=='undefined'){ var menu={}; }
-  // IMPORTANT: The names on this line must include the param's below it.
-  menu = {"home":[],"composting":[],"biodiesel":[]}
+  
+  menu = {"home":[],"composting":[],"biodiesel":[]} // The names on this line must include the param's below it.
 
   menu.home.img = "/apps/school/img/hero/ses.jpg"
   menu.home.page = "/apps/school/"
@@ -61,8 +62,9 @@ loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 renderImpactWidget();
 </script>
 
-<!-- Interactive state menu - Display beyond carbon table -->
+<!-- Interactive state menu - Display beyond carbon table in #dataDisplay, listens for hash change -->
 <script type="text/javascript" src="../js/bc.js" id="/apps/js/bc.js"></script>
+<script>showLocationStats();</script>
 
 <style>
   .bgimg {
@@ -106,7 +108,7 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     
     <div class="hero-text">
 
-      <div class="hero-title">Local Impacts<br></div><br>
+      <div id="stateName" class="hero-title">Local Impacts<br></div><br>
 
       <div>
         <!--
@@ -153,7 +155,7 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
           1. Select your state and one or more counties<!-- in combating climate change-->.<br><br>
           <div id="relocatedStateMenu" style="float:left; margin-bottom:6px;"></div>
           <div id="choose-counties" style="display:none">
-            <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;" class="btn btn-success">Select counties</a><br>
+            <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;" class="btn btn-lg btn-success">Select counties</a><br>
           </div>
           <div style="clear:both"></div><br>
           2. Select a focus area: Air, Water, Land, Energy, Health, Prosperity<br><br>
@@ -196,7 +198,7 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
 </div>
 
-<div id="bodyFile"></div>
+
 
 </body>
 </html>

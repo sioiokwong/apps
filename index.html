@@ -15,20 +15,13 @@
 
 <script>
   if(typeof param=='undefined'){ var param={}; }
+  param.display = "everything"
   //param.state = "SD"
   param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS,ENRG,WATR"
-</script>
 
-<script type="text/javascript" src="../localsite/js/localsite.js?display=everything"></script>
-
-
-<script>
-  loadMarkdown("apps.md", "readmeDiv", "_parent");
-  renderImpactWidget();
-
-  // School app menu
+  // App menu
   if(typeof menu=='undefined'){ var menu={}; }
-  menu = {"home":[],"composting":[],"biodiesel":[]}
+  menu = {"home":[],"composting":[],"biodiesel":[]} // The names on this line must include the param's below it.
   menu.home.img = "/apps/school/img/hero/ses.jpg"
   menu.home.page = "/apps/school/"
 
@@ -38,15 +31,26 @@
   menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
   menu.biodiesel.page = "/apps/biodiesel/"
 
-  showImpactWidget("land", menu, "loyola_chicago")
-  showHeroMenu("feature", menu, "loyola_chicago")
-
+  showHeroMenu("feature", menu, "my_site")
+  $(document).ready(function() {
+    showImpactWidget("land", menu, "my_site")
+  });
 </script>
 
+<script type="text/javascript" src="../localsite/js/localsite.js"></script>
+
+<script>
+  loadMarkdown("apps.md", "readmeDiv", "_parent");
+  renderImpactWidget();
+</script>
 
 </head>
 
 <body>
+
+<!-- temp - needed for states chlorpleth -->
+<!-- Interactive state menu - Display beyond carbon table in #dataDisplay -->
+<script type="text/javascript" src="js/bc.js" id="/apps/js/bc.js"></script>
 
 <style>
 .bgimg {
