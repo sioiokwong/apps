@@ -6,7 +6,7 @@ Our project makes a real-world impact in addressing the challenge by...
 
 **Innovation**
 
-Our community sustainability page is innovative and creative and takes a novel approach by...
+Our community page  is innovative and creative and takes a novel approach by...
 
 **Clarity**
 
@@ -16,7 +16,7 @@ Our project includes the following to make information and tools clear, accessib
 
 **Implementation**
 
-Our community sustainability page provides a new functional solution in the area(s) of...
+Our community page  provides a new functional solution in the area(s) of...
 
 
 **Integration**

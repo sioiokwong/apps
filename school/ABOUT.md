@@ -12,7 +12,7 @@ Our project attempts to make a broad, real-world impact in raising awareness of 
 
 **Innovation**
 
-Our community sustainability page is innovative and creative and takes a novel approach by integrating content from these various areas and attempting to provide a replicable structure as well as attempt to inspire other institutions.
+Our community page  is innovative and creative and takes a novel approach by integrating content from these various areas and attempting to provide a replicable structure as well as attempt to inspire other institutions.
 
 **Clarity**
 
@@ -22,7 +22,7 @@ Our project includes the following to make information and tools clear, accessib
 
 **Implementation**
 
-Our community sustainability page provides a new functional solution in the area(s) of the use of IO widgets in project-specific ways.
+Our community page  provides a new functional solution in the area(s) of the use of IO widgets in project-specific ways.
 
 **Integration**
 
