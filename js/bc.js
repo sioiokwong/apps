@@ -142,7 +142,10 @@ function stateInsert(stateText, theStateName) {
 }
 function displayStateImpact(hash,stateImpact) {
 
-  let theStateName = getState(hash.state.split(",")[0].toUpperCase()); // Resides in localsite.js
+  let theStateName = "";
+  if (hash.state) {
+    theStateName = getState(hash.state.split(",")[0].toUpperCase()); // Resides in localsite.js
+  }
   console.log("theStateName from displayStateImpact: " + theStateName);
   //alert("theStateName " + theStateName);
   if (theStateName.length <= 0) {
