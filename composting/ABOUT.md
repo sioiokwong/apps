@@ -8,7 +8,7 @@ In 2012, composting services were introduced to collect food scraps from prepara
 
 Also in 2013, the Campus Compost Collective (now called the Compost Bucket Program) began. To participate, faculty, staff, and students living on-campus receive an air-tight one-gallon bucket. They discard food scraps in the bucket and bring their filled buckets to a convenient drop-off location each week. That first year, over 1,780 pounds of food scraps were collected from the 76 students who participated. Annually this program collects between 4 and 6,000 pounds of organic waste.
 
-Our project makes a real-world impact in addressing the challenge by diverting 20% of all waste at our Lake Shore Campus from the landfill every year.  
+Our project makes a real-world impact by diverting 20% of all waste at our Lake Shore Campus from the landfill every year.  
 
 **Innovation**
 

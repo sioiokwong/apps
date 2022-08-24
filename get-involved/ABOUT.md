@@ -2,7 +2,7 @@
 
 **Project Impact**
 
-Our project makes a real-world impact in addressing the challenge by providing users with information concerning their community's environment and then immediately offering ways to start getting involved and becoming part of a solution rather than just monitoring the problem. 
+Our project makes a real-world impact by providing users with information concerning their community's environment and then immediately offering ways to start getting involved and becoming part of a solution rather than just monitoring the problem. 
 
 **Innovation**
 

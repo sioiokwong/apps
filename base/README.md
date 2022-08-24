@@ -1,4 +1,2 @@
-# My Community Page
-
-Copy the base folder and edit the README.md file to add info to your page.  
-Edit the param values in your page header to customize your default location, industries and impacts.
+To host your selections as a local page, you can make a copy of the localsite/base folder.  [Setup&nbsp;steps](../../localsite/start/).
+Update the param values in your new page header to set your default location, industries and impacts.

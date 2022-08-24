@@ -4,7 +4,7 @@ See also [this section](../../apps/ev/)
 
 **Project Impact**
 
-Our project makes a real-world impact in addressing the challenge by...
+Our project makes a real-world impact by...
 
 **Innovation**
 

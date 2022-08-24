@@ -2,7 +2,7 @@
 
 **Project Impact**
 
-Our project makes a real-world impact in addressing the challenge by informing others of the pollution in their air 
+Our project makes a real-world impact by informing others of the pollution in their air 
 
 **Innovation**
 

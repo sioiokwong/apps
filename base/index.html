@@ -22,7 +22,7 @@
   param.lon = -95.7
   //param.state = "GA"
   param.set = "air"
-  param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
+  param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS,VADD,JOBS"
   // More params: https://model.earth/localsite
 
   // Shared Sections menu
@@ -81,6 +81,15 @@ loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
   .bgimg {
     background-image: url(https://model.earth/us-states/images/backgrounds/1280x720/landscape/south-dakota.jpg);
   }
+  .hero-title {
+    margin-bottom: 4px;
+  }
+  .location_titles {
+    font-size: 28px;
+    margin-bottom: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #111;
+  }
 </style>
 </head>
 
@@ -108,7 +117,9 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     
     <div class="hero-text">
 
-      <div id="stateName" class="hero-title">Local Impacts<br></div><br>
+      <div id="stateName" class="hero-title">My Community</div>
+      <div class="location_titles"></div><!-- -->
+      <br>
 
       <div>
         <!--
@@ -150,13 +161,10 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
 
         <div id="hero-rect" style="overflow: auto; max-width: 740px; float:left">
           
-          <div style="font-size:24px; margin-top:14px; margin-bottom:18px; font-weight:500">Explore your community's industries and impacts<!--Getting Started-->...</div>
+          <div style="font-size:24px; margin-top:14px; margin-bottom:18px; font-weight:500">Explore your local industries and impacts<!--Getting Started-->...</div>
 
-          1. Select your state and one or more counties<!-- in combating climate change-->.<br><br>
+          1. Select your state and <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">one or more counties</a>.<br><br>
           <div id="relocatedStateMenu" style="float:left; margin-bottom:6px;"></div>
-          <div id="choose-counties" style="display:none">
-            <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;" class="btn btn-lg btn-success">Select counties</a><br>
-          </div>
           <div style="clear:both"></div><br>
           2. Select a focus area: Air, Water, Land, Energy, Health, Prosperity<br><br>
           3. Choose commodities in the center column of the Input-Output chart.<br><br>
