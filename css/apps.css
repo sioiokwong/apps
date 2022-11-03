@@ -46,6 +46,12 @@
   font-weight:800;
   text-shadow: 2px 2px 8px #111;
 }
+.hero-title-lg {
+  font-size:54px;
+  line-height: 1.1em;
+  font-weight:800;
+  text-shadow: 2px 2px 6px #333;
+}
 @media (max-width: 800px) {
   .hero-text {
     float: none;
