@@ -35,6 +35,9 @@
 #resultsTable {
   margin-bottom: 8px;
 }
+#hero_holder {
+  position: relative;
+}
 .hero-text {
   /* float:left; */
   color:#fff;
