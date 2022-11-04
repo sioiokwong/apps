@@ -17,13 +17,11 @@
 
 <!-- Interactive state menu - Display beyond carbon table in #dataDisplay -->
 <script type="text/javascript" src="../js/bc.js" id="/apps/js/bc.js"></script>
-<script>showLocationStats();</script>
-
-
 <script>
+  // Page similar to /localsite/tools
+  showLocationStats();
   //loadMarkdown("README.md", "readmeDiv", "_parent");
 </script>
-
 <style>
 #hero-landscape-image {
   background-image: url(/community/img/hero/hero.png);
@@ -31,7 +29,6 @@
 </style>
 
 </head>
-
 
 <body>
 
@@ -41,25 +38,23 @@
 </div>
 
 
-<div class="content contentpadding" style="min-height: 550px; padding-top:60px">
-  <div class="hero-text">
+<div class="content contentpadding" style="max-width: 1300px; min-height: 550px; padding-top:40px">
 
-    <div style="font-size:60px; line-height: 1em; font-weight:800; float:left; margin-right:30px;text-shadow: 2px 2px 6px #333;">Beyond<br>Carbon</div><br>
+  <div class="hero-text">
+    <div style="font-size:60px; line-height: 1em; font-weight:800; margin-right:30px; margin-bottom:10px; text-shadow: 2px 2px 6px #333;">Beyond Carbon</div><br>
   </div>
 
-  <div class="hero-bucket" style="max-width: 680px; float:left">
+  <div class="hero-bucket" style="max-width: 900px; width:100%">
     
-    <div style="font-size:22px; margin-bottom:10px; font-weight:400">What's your impact?</div>
+    <div style="font-size:22px; margin-bottom:10px; font-weight:400">What's your local impact?</div>
 
     <div id="relocatedStateMenu"></div><br>
-    <!--
-    Find out where your state ranks in combating climate change.<br><br>
-    -->
+
     <div id="dataHeader"></div>
     <div id="dataDisplay"></div>
 
     <div id="choose-your-state-intro">
-      Choose a state to view its impacts and initiatives.<br>
+      Choose a state to view impacts and initiatives.<br>
     </div>
     <div id="choose-counties" style="display:none">
       <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">Select one or more counties</a><br>
@@ -76,8 +71,6 @@
         <li>Eliminate building emissions</li>
         <li>Modernize industry and infrastructure</li>
       </ul>
-
-
 
     </div>
 
@@ -96,9 +89,8 @@
 <hr><br>
 -->
 
-<div id="bodyFile"></div>
-
 <link rel="stylesheet" href="/localsite/css/fonts/materialicons/icon.css" id="/localsite/css/fonts/materialicons/icon.css" />
+
 </body>
 </html>
 
