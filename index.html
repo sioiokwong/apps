@@ -59,17 +59,29 @@
 <div id="hero_holder">
 <div id="hero-landscape-image" class="bgimg displayOnload" style="display:none; background-position: 0 54px;">
 
-
   <div id="hero-content">
 
     <!--
     <div style="font-size:54px; line-height: 1.1em; color: #fff; font-weight:800; text-shadow: 2px 2px 6px #333;">State Impact Tools</div><br>
     -->
 
+    <!-- why does this get updated to the state name in apps/base, but not here? -->
+
+    <!--
+      To investigate (note from js/bc.js):
+      // Within localhost.js the state menu is moved into the hero image area by the following:
+      // relocatedStateMenu.appendChild(state_select);
+    -->
+    <div id="stateName" class="hero-title" style="font-size:48px; font-weight:300">Localsite Framework</div>
+    <div class="location_titles"></div><!-- Counties within state -->
+    <br>
+
     <div id="hero-mini" style="max-width:150px;padding-bottom:12px">
 
-      <b style="margin-bottom:8px; display:block; padding-top:12px; padding-left:18px">Characteristics</b>
-      <div id="impact-widget-vertical">
+      <!--
+      <b style="margin-bottom:8px; display:block; padding-top:12px; padding-left:18px">Impacts</b>
+      -->
+      <div id="impact-widget-vertical" style="padding-top:8px">
         <div id="insertImpactIcons"></div>
       </div>
 
@@ -77,7 +89,7 @@
 
     <div id="hero-rect" class="displayOnload" style="display: none; margin-right:30px">
       
-      <div style="padding:0px;margin:0px;margin-bottom:15px;font-size:24px" class="hero-title">Environments</div>
+      
       
       <div id="relocatedStateMenu"></div><br>
       <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">Select counties and regions</a> to view local industry impacts<!--a href="#impact"></a-->
@@ -85,12 +97,10 @@
       <br><br>
 
       <b>Create a Dev Environment</b><br>
-      <a href="../localsite/start/">Setup your local webroot and fork repos</a>. Copy or edit a folder in the apps repo. Deploy your updates using GitHub Desktop. More about contributing to <a href="../../community/challenge/how/">local site pages</a>.<br><br>
+      <a href="../localsite/start/"><b>Getting Started</b> - Setup your local webroot and fork repos</a>. Copy&nbsp;or&nbsp;edit a folder in the apps repo. Deploy your updates using GitHub Desktop. More about contributing to <a href="../../community/challenge/how/">local site pages</a>.<br><br>
 
 
       <div id="readmeDiv"></div>
-
-      
 
       <a href="../community/projects/">Project Areas</a> | <a href="../community/tools/">Lifecycle Tools Overview</a> | <a href="../../community/challenge/#winners">Web Challenge Winners</a>
 

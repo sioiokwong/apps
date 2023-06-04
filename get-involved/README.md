@@ -8,4 +8,4 @@
 
 <b>Educate: </b>The environment is changing rapidly, making it difficult to understand. Read what the experts are saying about our environment and your community. 
 
-Communicate: Creating a future beyond carbon is going to require much discussion with our community. Check out discussion forumns and ways to contact your representatives. 
+Communicate: Transitioning to new technologies requires making informed decisions. Check out discussion forums and ways to contact your representatives. 

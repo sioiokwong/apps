@@ -73,6 +73,31 @@
   overflow: auto;
   float: left;
 }
+
+.bgimg {
+  min-height: 600px;
+}
+.btn {
+  font-weight: 600;
+}
+#hero-rect {
+  overflow: auto;
+  float: none !important;
+}
+/* TO DO: Only set this css when state param is null, otherwise two hero images are loaded. */
+.bgimg {
+  background-image: url(https://model.earth/us-states/images/backgrounds/1280x720/landscape/south-dakota.jpg);
+}
+.hero-title {
+  margin-bottom: 4px;
+}
+.hero-text .location_titles {
+  font-size: 28px;
+  margin-bottom: 14px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px #111;
+}
+  
 #menuImages {
   display: block !important;
 }

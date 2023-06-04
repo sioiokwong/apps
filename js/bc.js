@@ -32,7 +32,7 @@ document.addEventListener('hashChangeEvent', function (elem) {
 function loadLocationStats(hash) {
   /*
   // Prior used csv file
-  d3.text("/apps/beyondcarbon/5_22-data-06_06.csv").then(function(data) {
+  d3.text("/apps/carbon/5_22-data-06_06.csv").then(function(data) {
       stateImpact = d3.csvParseRows(data);
       console.log("loadLocationStats - stateImpact row count: " + stateImpact.length);
       //alert(stateImpact);
