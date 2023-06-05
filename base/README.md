@@ -1,2 +1,2 @@
-To host your selections as a local page, you can make a copy of the localsite/base folder.  [Setup&nbsp;steps](../../localsite/start/).
+To host your selections as a local page, make a copy of the apps/base folder.  [Setup&nbsp;steps](../../localsite/start/).
 Update the param values in your new page header to set your default location, industries and impacts.

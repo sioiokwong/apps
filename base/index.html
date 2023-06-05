@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>My Website</title>
+<title>Localsite</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 <link type="text/css" rel="stylesheet" href="../../localsite/css/base.css" id="/localsite/css/base.css" />
@@ -25,24 +25,9 @@
   param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS,VADD,JOBS"
   // More params: https://model.earth/localsite
 
-  // Shared Sections menu
-  if(typeof menu=='undefined'){ var menu={}; }
-  
-  menu = {"home":[],"composting":[],"biodiesel":[]} // The names on this line must include the param's below it.
-
-  menu.home.img = "/apps/school/img/hero/ses.jpg"
-  menu.home.page = "/apps/school/"
-
-  menu.composting.img = "/apps/school/img/hero/composting.jpg"
-  menu.composting.page = "/apps/composting/"
-
-  menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
-  menu.biodiesel.page = "/apps/biodiesel/"
-
-  showHeroMenu("custom", menu, "my_community_site")
-
   $(document).ready(function() {
-    showImpactWidget("land", menu, "my_community_site") // This waits for the DOM to load
+    //   if(typeof menu=='undefined'){ var menu={}; }
+    //showImpactWidget("land", menu, "my_community_site") // This waits for the DOM to load
     // Some of your javascript will need to reside in this Ready statement 
     // This allows the HTML to load before manipulating ID elements on the page below.
     // Example, hide the verticle menu widget:
@@ -90,8 +75,8 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     
     <div class="hero-text">
 
-      <div id="stateName" class="hero-title">My Website</div>
-      <div class="location_titles"></div><!-- Counties within state -->
+      <div id="stateName" class="hero-title">Localsite</div>
+      <div class="location_titles">Set the location and timeframe</div>
       <br>
 
       <div>
@@ -136,15 +121,14 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
           
           <div style="font-size:24px; margin-top:14px; margin-bottom:18px; font-weight:500">Local Industries and Impacts</div>
 
-          1. Select your state and <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">one or more counties</a>.<br><br>
+          1. If in the US, select state and <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">one or more counties</a>.<br><br>
           <div id="relocatedStateMenu" style="float:left; margin-bottom:6px;"></div>
           <div style="clear:both"></div><br>
           2. Select a focus area: Air, Water, Land, Energy, Health, Prosperity<br><br>
           3. Choose commodities in the center column of the Input-Output chart.<br><br>
           4. Adjust sliders to view the effects of changes in commodity levels.<br><br>
          
-          To create your own page, copy your URL parameters and <a href="../../localsite/#parameters">format as javascript</a><br>
-          in a copy of an existing <a href="../" style="white-space:nowrap">index.html</a> community page.<br><br>
+          Copy to a new page. Add your URL parameters as <a href="../../localsite/#parameters">javascript within the new page</a>.<br><br>
 
 
           
@@ -170,10 +154,6 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     <div id="dataHeader"></div>
     <div id="dataDisplay"></div>
     <br>
-
-    <h2>Shared Sections</h2>
-    <div id="menuImages" style="display: none;"></div>
-    <div style="clear:both"></div><br>
 
     <div id="aboutDiv"></div>
 
