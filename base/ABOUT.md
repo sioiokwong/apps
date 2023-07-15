@@ -1,13 +1,9 @@
-## Episode
+## Location/Scene/Episode
 
 **Overview**
 
-This episode...
+Tell us about your content.
 
-**Integration**
+**Details**
 
-What other episodes does the new episode tie into?
-
-**Impacts**
-
-Optionally explore an impact topic based on the location.
+What other content does the new content tie into?
