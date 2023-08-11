@@ -1,4 +1,4 @@
-[Base Starter Page](base/) - Copy to create your page and [edit parameters](../localsite/#parameters) 
+[Base Starter Folder](base/) - Copy to create your page and [edit parameters](../localsite/#parameters) 
 [Carbon Cycle](carbon/) - Combining Wikipedia, Bloomberg and EPA data  
 [Coastal Recycling](coastal/) - Southeast Georgia - Activated Carbon  
 [EV Manufacturing](ev/) - LaGrange Georgia - Automotive Industries 
