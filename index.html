@@ -39,9 +39,13 @@
 
 <script type="text/javascript" src="../localsite/js/localsite.js?showheader=true&showsearch=true"></script>
 
-<script>
-  loadMarkdown("apps.md", "readmeDiv", "_parent");
-</script>
+<!-- Required for state select menu -->
+<!-- BUG - Attempting to load this within localsite.js line 656.
+<script type="text/javascript" src="../localsite/js/navigation.js" id="/localsite/js/navigation.js"></script>
+-->
+<script type="text/javascript" src="../localsite/js/map-filters.js" id="/localsite/js/map-filters.js"></script>
+
+
 
 </head>
 
@@ -50,7 +54,9 @@
 <style>
 .bgimg {
   min-height: 600px;
-  background-image: url(https://model.earth/us-states/images/backgrounds/1280x720/landscape/south-dakota.jpg);
+  /*
+  background-image: url(img/hero/state/GA/GA-hero.jpg);
+  */
 }
 
 @media (max-width: 1000px) {
@@ -126,6 +132,12 @@ https://www.purpleair.com/pa.widget.js?key=WQDIG1WBX2S88N2Q&module=AQI&conversio
 <div id='PurpleAirWidget_57441_module_AQI_conversion_C0_average_10_layer_standard'>Loading PurpleAir Widget...</div>
 <script src='https://www.purpleair.com/pa.widget.js?key=WQDIG1WBX2S88N2Q&module=AQI&conversion=C0&average=10&layer=standard&container=PurpleAirWidget_57441_module_AQI_conversion_C0_average_10_layer_standard'></script>
 -->
+
+<script>
+  loadMarkdown("apps.md", "readmeDiv", "_parent");
+  let heroBackgroundImage = "url(img/hero/state/GA/GA-hero.jpg)";
+  $("#hero-landscape-image").css('background-image', heroBackgroundImage);
+</script>
 
 </body>
 </html>
