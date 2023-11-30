@@ -73,7 +73,9 @@
   overflow: auto;
   float: left;
 }
-
+.dark .hero-bucket {
+  background-color: rgba(33, 33, 33, 0.8);
+}
 .bgimg {
   min-height: 600px;
 }
